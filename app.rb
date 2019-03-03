@@ -23,7 +23,7 @@ class Carz < Sinatra::Base
 	post '/repairs' do
 		 @repair = Repair.new(params[:repair])
 		 @repair.save
-		 erb :index
+		 redirect "/"
 	end
 
 end
