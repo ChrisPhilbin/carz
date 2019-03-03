@@ -1,10 +1,15 @@
+<div align="center"><h1><strong>Add a new car</strong></h1></div>
+
 <form action="/cars" method="post" role="form">
 
-	 <input name="car[year]" type="text" value="<%= @car.year %>">
+	<label for="year">Year:</label>
+	 <input name="car[year]" id="year" type="text" value="<%= @car.year %>">
 
-	 <input name="car[make]" type="text" value="<%= @car.make %>">
+	<label for="make">Make:</label>
+ 	 <input name="car[make]" id="make" type="text" value="<%= @car.make %>">
 
-	 <input name="car[model]" type="text" value="<%= @car.model %>">
+ 	<label for="model">Model:</label>
+	 <input name="car[model]" id="model" type="text" value="<%= @car.model %>">
 
 	 <button type="submit">Submit</button>
 
