@@ -1,7 +1,8 @@
-<h1>Listing all repairs for your <%= @car.year %> <%= @car.make %> <%= @car.model %></h1>
+<h1>Listing all repairs for your <%= @car.year %> <%= @car.make %> <%= @car.model %></h1><br />
+[ <a href="#">Add a new repair for this car</a> ]
 <ul>
 	<% @repairs.each do |repair| %>
-		<li>When: <%= repair.when %></li><br />
+		<li>When: <%= repair.date %></li><br />
 		<li>Description: <%= repair.description %></li><br />
 		-----------------<br />
 	<% end %>
