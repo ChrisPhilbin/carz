@@ -20,8 +20,9 @@ class Carz < Sinatra::Base
 		erb :new_repair
 	end
 
-	post '/repairs' do 
+	post '/repairs' do
 		 @repair = Repair.new(params[:repair])
+		 @repair.save
 		 erb :index
 	end
 
