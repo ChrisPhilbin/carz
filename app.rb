@@ -14,6 +14,11 @@ class Carz < Sinatra::Base
 		erb :list_repairs
 	end
 
+	get '/add_car' do
+		@car = Car.new
+		erb :new_car
+	end
+
 	get '/car/:id/add_repair' do
 		@car = Car.find_by(id: params[:id])
 		@repair = Repair.new #create a blank repair object and pass it in to the template
@@ -25,5 +30,12 @@ class Carz < Sinatra::Base
 		 @repair.save
 		 redirect "/"
 	end
+
+	post '/cars' do
+		 @car = Car.new(params[:car])
+		 @car.save
+		 redirect "/"
+	end
+
 
 end
