@@ -8,9 +8,10 @@ class Carz < Sinatra::Base
 		erb :index
 	end
 
-	get '/cars/:id' do
+	get '/car/:id' do
 		@car = Car.find_by(id: params[:id]) #returns individal car object assigned to the id
-		@repair = @car.repairs #return an array of all repair objects assigned to the car 
+		@repairs = @car.repairs #return an array of all repair objects assigned to the car 
 		erb :list_repairs
+	end
 
 end

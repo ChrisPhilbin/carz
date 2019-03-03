@@ -1,0 +1,8 @@
+<h1>Listing all repairs for your <%= @car.year %> <%= @car.make %> <%= @car.model %></h1>
+<ul>
+	<% @repairs.each do |repair| %>
+		<li>When: <%= repair.when %></li><br />
+		<li>Description: <%= repair.description %></li><br />
+		-----------------<br />
+	<% end %>
+</ul>
