@@ -1,0 +1,9 @@
+<form action="/repairs" method="post"role="form">
+
+	 <input type="hidden" name="car_id" value="<%= @car.id %>"> <!-- #take car id and pass it in via a hidden field -->
+
+	 <input name="description" type="text" value="<%= @repair.description %>">
+
+	 <button type="submit">Submit</button>
+
+</form>
