@@ -3,18 +3,17 @@
 	<form action="/repairs" method="post" role="form">
 
 		 <input type="hidden" name="repair[car_id]" value="<%= @car.id %>"> <!-- #take car id and pass it in via a hidden field -->
-		<div class="from-group">
+		<div class="form-group">
 			<div class="col-4">
 				 <label for="date">Date:</label>
 				 <input name="repair[date]" class="form-control" id="date" type="text" value="<%= @repair.date %>">
 			</div>
 		</div>
-		<div class="from-group">
+		<div class="form-group">
 			<div class="col-4">
 				 <label for="desc">Description:</label>
 			   	 <input name="repair[description]" class="form-control" id="desc" type="text" value="<%= @repair.description %>">
 			</div>
 		</div>
-		
 		<button type="submit" class="btn btn-primary">Submit</button>
 	</form>

@@ -1,12 +1,15 @@
 <html>
-<head>
-	<title>Welcome to the Carz app</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-<body>
-	<p align="center">
-		[ <a href="/">Car list</a> | <a href="/add_car">Add a new car</a> | <a href="#">Remove a car</a> ]
-		<%= yield %>
-	</p>
-</body>
+	<head>
+		<title>Welcome to the Carz app</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="container">
+			<p align="center">
+				[ <a href="/">Car list</a> | <a href="/add_car">Add a new car</a> | <a href="#">Remove a car</a> ]
+				<%= yield %>
+			</p>
+		</div>
+	</body>
 </html>
