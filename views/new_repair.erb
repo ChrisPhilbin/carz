@@ -1,13 +1,20 @@
 <div align="center"><h1><strong>Add a repair for your <%= @car.year %> <%= @car.make %> <%= @car.model %></strong></h1></div>
 
-<form action="/repairs" method="post" role="form">
+	<form action="/repairs" method="post" role="form">
 
-	 <input type="hidden" name="repair[car_id]" value="<%= @car.id %>"> <!-- #take car id and pass it in via a hidden field -->
-	 <label for="date">Date:</label>
-	 <input name="repair[date]" id="date" type="text" value="<%= @repair.date %>">
-	 <label for="desc">Description:</label>
-   	 <input name="repair[description]" id="desc" type="text" value="<%= @repair.description %>">
-
-	 <button type="submit">Submit</button>
-
-</form>
+		 <input type="hidden" name="repair[car_id]" value="<%= @car.id %>"> <!-- #take car id and pass it in via a hidden field -->
+		<div class="from-group">
+			<div class="col-4">
+				 <label for="date">Date:</label>
+				 <input name="repair[date]" class="form-control" id="date" type="text" value="<%= @repair.date %>">
+			</div>
+		</div>
+		<div class="from-group">
+			<div class="col-4">
+				 <label for="desc">Description:</label>
+			   	 <input name="repair[description]" class="form-control" id="desc" type="text" value="<%= @repair.description %>">
+			</div>
+		</div>
+		
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
