@@ -49,6 +49,7 @@ class Carz < Sinatra::Base
 		erb :remove_car
 	end
 
+	#use post method instead of delete - Sinatra does not support delete
 	post '/remove' do
 		@car = Car.find_by(params[:id])
 		@car.delete
