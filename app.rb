@@ -49,7 +49,7 @@ class Carz < Sinatra::Base
 		erb :remove_car
 	end
 
-	delete '/remove' do
+	post '/remove' do
 		@car = Car.find_by(params[:id])
 		@car.delete
 		redirect "/"

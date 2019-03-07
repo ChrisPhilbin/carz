@@ -1,6 +1,6 @@
 <div align="center"><h1><strong>Remove a car</strong></h1></div>
 
-<form action="/remove" method="delete" role="form">
+<form action="/remove" method="post" role="form">
 	<select name="cars">
 		<% @cars.each do |car| %>
 			<option value="<%= car.id %>"><%= car.year %> <%= car.make %> <%= car.model %></option>
