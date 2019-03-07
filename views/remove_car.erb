@@ -1,9 +1,10 @@
 <div align="center"><h1><strong>Remove a car</strong></h1></div>
 
-<form action="/cars" method="post" role="form">
+<form action="/remove" method="delete" role="form">
 	<select name="cars">
-		<% cars.each do |car| %>
+		<% @cars.each do |car| %>
 			<option value="<%= car.id %>"><%= car.year %> <%= car.make %> <%= car.model %></option>
 		<% end %>
 	</select>
+	<button type="submit" class="btn btn-primary">Submit</button>
 </form>
