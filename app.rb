@@ -56,4 +56,8 @@ class Carz < Sinatra::Base
 		redirect "/"
 	end
 
+	get "/edit_repair/:id" do
+		@repair = Repair.find_by(id: params[:id])
+		erb :edit_repair
+	end
 end

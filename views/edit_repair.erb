@@ -1,0 +1,21 @@
+<div align="center"><h1><strong>Edit this repair</strong></h1></div>
+
+<form action="/repair" method="post" role="form">
+
+	<div class="form-group">
+		<div class="col-4">
+			<label for="date">Date:</label>
+			<input name="repair[date]" class="form-control" id="date" type="text" value="<%= @repair.date %>">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-4">
+			<label for="description">Description:</label>
+			<input name="repair[description]" class="form-control" id="description" type="text" value="<%= @repair.description %>">
+		</div>
+	</div>
+
+	<button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
