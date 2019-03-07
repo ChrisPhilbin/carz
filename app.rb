@@ -51,7 +51,7 @@ class Carz < Sinatra::Base
 
 	#use post method instead of delete - Sinatra does not support delete
 	post '/remove' do
-		@car = Car.find_by(params[:id])
+		@car = Car.find_by(id: params[:id])
 		@car.delete
 		redirect "/"
 	end
