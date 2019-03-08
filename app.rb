@@ -62,7 +62,8 @@ class Carz < Sinatra::Base
 	end
 
 	post "/update_repair" do
-		@repair.save
+		@repair = Repair.find_by(id: params[:id])
+		@repair.update(params[:repair])
 		redirect "/"
 	end
 end
