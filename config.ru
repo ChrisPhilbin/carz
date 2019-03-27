@@ -1,3 +1,6 @@
 require './app'
 use Rack::MethodOverride
-run Carz
+use CarsController
+use UsersController
+user RepairsConroller
+run ApplicationController
