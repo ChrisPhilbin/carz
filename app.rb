@@ -11,12 +11,12 @@ class Carz < Sinatra::Base
 
 	#index for app
 	get '/' do
-		@cars = Car.all
-		erb :index
+		erb :login
 	end
 
 	get '/cars' do
-		redirect '/'
+		@cars = Car.all
+		erb :index
 	end
 
 	#list all repairs for car with :id
