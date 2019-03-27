@@ -3,6 +3,12 @@ require_relative './config/environment'
 
 class Carz < Sinatra::Base
 
+	configure do
+		set :public_folder, 'public'
+		set :views, './views'
+		enable :sessions
+		set :session_secret, "carzrepairtracker"
+
 	#index for app
 	get '/' do
 		@cars = Car.all
@@ -69,6 +75,16 @@ class Carz < Sinatra::Base
 		@repair = Repair.find_by(id: params[:id])
 		@repair.update(params[:repair])
 		redirect "/"
+	end
+
+	helpers do
+	    def logged_in?
+	      !!session[:user_id]
+	    end
+
+	    def current_user
+	      User.find(session[:user_id])
+		end
 	end
 
 end
