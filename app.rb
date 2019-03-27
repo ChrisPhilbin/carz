@@ -9,15 +9,19 @@ class Carz < Sinatra::Base
 		erb :index
 	end
 
+	get '/cars' do
+		redirect '/'
+	end
+
 	#list all repairs for car with :id
-	get '/car/:id' do
+	get '/cars/:id' do
 		@car = Car.find_by(id: params[:id]) #returns individal car object assigned to the id
 		@repairs = @car.repairs #return an array of all repair objects assigned to the car 
 		erb :list_repairs
 	end
 
 	#add a new car to the database
-	get '/add_car' do
+	get '/cars/new' do
 		@car = Car.new
 		erb :new_car
 	end
@@ -50,18 +54,18 @@ class Carz < Sinatra::Base
 	end
 
 	#use post method instead of delete - Sinatra does not support delete
-	post '/remove' do
+	post '/cars/:id' do
 		@car = Car.find_by(id: params[:id])
 		@car.delete
 		redirect "/"
 	end
 
-	get "/edit_repair/:id" do
+	get "/repairs/:id" do
 		@repair = Repair.find_by(id: params[:id])
 		erb :edit_repair
 	end
 
-	post "/update_repair" do
+	post "/repairs/:id" do
 		@repair = Repair.find_by(id: params[:id])
 		@repair.update(params[:repair])
 		redirect "/"
