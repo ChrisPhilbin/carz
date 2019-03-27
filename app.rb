@@ -71,7 +71,4 @@ class Carz < Sinatra::Base
 		redirect "/"
 	end
 
-	get '/test' do
-		redirect '/'
-	end
 end
