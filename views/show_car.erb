@@ -1,0 +1,10 @@
+<h1>Listing all repairs for your <%= @car.year %> <%= @car.make %> <%= @car.model %></h1><br />
+[ <a href="/car/<%= @car.id %>/add_repair">Add a new repair for this car</a> ]
+<ul>
+	<% @repairs.each do |repair| %>
+		<li>When: <%= repair.date %></li><br />
+		<li>Description: <%= repair.description %></li><br />
+		<li><a href="/edit_repair/<%=repair.id%>">Edit this repair</a></li><br />
+		-----------------<br />
+	<% end %>
+</ul>

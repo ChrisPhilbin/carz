@@ -17,7 +17,7 @@ class Carz < Sinatra::Base
 	get '/cars/:id' do
 		@car = Car.find_by(id: params[:id]) #returns individal car object assigned to the id
 		@repairs = @car.repairs #return an array of all repair objects assigned to the car 
-		erb :list_repairs
+		erb :show_car
 	end
 
 	#add a new car to the database
@@ -69,5 +69,9 @@ class Carz < Sinatra::Base
 		@repair = Repair.find_by(id: params[:id])
 		@repair.update(params[:repair])
 		redirect "/"
+	end
+
+	get '/test' do
+		redirect '/'
 	end
 end
