@@ -7,7 +7,7 @@ class ApplicationController < Sinatra::Base
 		set :public_folder, 'public'
 		set :views, './views'
 		enable :sessions
-		set :session_secret, "carzrepairtracker"
+		set :session_secret, "carsrepairtracker"
 
 	#index for app
 	get '/' do
