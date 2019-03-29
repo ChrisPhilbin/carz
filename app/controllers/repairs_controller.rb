@@ -8,7 +8,7 @@ class RepairsController < ApplicationController
 
 	get "/repairs/:id" do
 		@repair = Repair.find_by(id: params[:id])
-		erb :edit_repair
+		erb :'repairs/edit_repair'
 	end
 
 	post "/repairs/:id" do
