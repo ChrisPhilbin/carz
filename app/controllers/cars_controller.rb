@@ -1,8 +1,22 @@
 class CarsController < ApplicationController
 
+	#display a list of all cars
 	get '/cars' do
 		@cars = Car.all
 		erb :index
+	end
+
+	#add a new car to the database
+	get '/cars/new' do
+		@car = Car.new
+		erb :new_car
+	end
+
+	#create a new car, save it to the database and redirect to the index
+	post '/cars' do
+		 @car = Car.new(params[:car])
+		 @car.save
+		 redirect "/"
 	end
 
 	#list all repairs for car with :id
@@ -12,24 +26,15 @@ class CarsController < ApplicationController
 		erb :show_car
 	end
 
-	#add a new car to the database
-	get '/cars/new' do
-		@car = Car.new
-		erb :new_car
-	end
+	# get '/cars/:id/edit' do
+
+	# end
 
 	#add a repair to car with specified id
 	get '/cars/:id/add_repair' do
 		@car = Car.find_by(id: params[:id])
 		@repair = Repair.new #create a blank repair object and pass it in to the template
 		erb :new_repair
-	end
-
-		#create a new car, save it to the database and redirect to the index
-	post '/cars' do
-		 @car = Car.new(params[:car])
-		 @car.save
-		 redirect "/"
 	end
 
 	#select which car to delete from the database
