@@ -8,10 +8,11 @@ class ApplicationController < Sinatra::Base
 		set :views, './views'
 		enable :sessions
 		set :session_secret, "carzrepairtracker"
+	end
 
 	#index for app
 	get '/' do
-		erb :login
+		erb :'users/login'
 	end
 
 	helpers do

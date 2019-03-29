@@ -1,5 +1,5 @@
 require 'sinatra'
-require_relative './config/environment'
+# require_relative './config/environment'
 
 class ApplicationController < Sinatra::Base
 
@@ -8,10 +8,11 @@ class ApplicationController < Sinatra::Base
 		set :views, './views'
 		enable :sessions
 		set :session_secret, "carsrepairtracker"
+	end
 
 	#index for app
 	get '/' do
-		erb :login
+		erb :'users/login'
 	end
 
 	helpers do

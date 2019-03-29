@@ -9,7 +9,7 @@ class CarsController < ApplicationController
 	#add a new car to the database
 	get '/cars/new' do
 		@car = Car.new
-		erb :new_car
+		erb :'cars/new_car'
 	end
 
 	#create a new car, save it to the database and redirect to the index
@@ -23,7 +23,7 @@ class CarsController < ApplicationController
 	get '/cars/:id' do
 		@car = Car.find_by(id: params[:id]) #returns individal car object assigned to the id
 		@repairs = @car.repairs #return an array of all repair objects assigned to the car 
-		erb :show_car
+		erb :'cars/show_car'
 	end
 
 	# get '/cars/:id/edit' do
