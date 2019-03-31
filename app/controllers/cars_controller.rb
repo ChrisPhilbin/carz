@@ -8,12 +8,9 @@ class CarsController < ApplicationController
 
 	#add a new car to the database
 	get '/cars/new' do
-		if !logged_in?
-			redirect '/'
-		else
-			@car = Car.new
-			erb :'cars/new_car'
-		end
+		redirect_if_not_logged_in
+		@car = Car.new
+		erb :'cars/new_car'
 	end
 
 	#create a new car, save it to the database and redirect to the index
