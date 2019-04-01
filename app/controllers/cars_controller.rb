@@ -2,7 +2,8 @@ class CarsController < ApplicationController
 
 	#display a list of all cars
 	get '/cars' do
-		@cars = Car.all
+		redirect_if_not_logged_in
+		@cars = current_user.cars.all
 		erb :index
 	end
 
@@ -17,7 +18,7 @@ class CarsController < ApplicationController
 	post '/cars' do
 		 @car = Car.new(params[:car])
 		 @car.save
-		 redirect "/"
+		 redirect "/cars"
 	end
 
 	#list all repairs for car with :id

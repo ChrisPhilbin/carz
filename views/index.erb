@@ -1,7 +1,7 @@
 <ul>
 	<% @cars.each do |car| %>
 		<li>
-			<a href="car/<%= car.id %>"><%= car.year %> <%= car.make %> <%= car.model%></a><br />
+			<a href="cars/<%= car.id %>"><%= car.year %> <%= car.make %> <%= car.model%></a><br />
 		</li>
 	<% end %>
 </ul>

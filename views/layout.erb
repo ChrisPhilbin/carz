@@ -7,7 +7,7 @@
 	<body>
 		<div class="container">
 			<p align="center">
-				[ <a href="/">Car list</a> | <a href="/cars/new">Add a new car</a> | <a href="/remove_car">Remove a car</a> ]
+				[ <a href="/cars">Car list</a> | <a href="/cars/new">Add a new car</a> | <a href="/remove_car">Remove a car</a> <% if logged_in? %>| <a href="/logout">Logout</a> <% end %> ]
 				<%= yield %>
 			</p>
 		</div>
