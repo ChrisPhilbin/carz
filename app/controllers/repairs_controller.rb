@@ -3,7 +3,7 @@ class RepairsController < ApplicationController
 	post '/repairs' do
 		 @repair = Repair.new(params[:repair])
 		 @repair.save
-		 redirect "/"
+		 redirect "/cars"
 	end
 
 	get '/repairs/new' do
@@ -20,7 +20,7 @@ class RepairsController < ApplicationController
 	post "/repairs/:id" do
 		@repair = Repair.find_by(id: params[:id])
 		@repair.update(params[:repair])
-		redirect "/"
+		redirect "/cars"
 	end
 
 end
