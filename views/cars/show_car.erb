@@ -1,10 +1,29 @@
 <div align="center"><h1>Listing all repairs for your <%= @car.year %> <%= @car.make %> <%= @car.model %></h1><br /></div>
-<div align="center">[ <a href="/repairs/new?car_id=<%= @car.id %>">Add a new repair for this car</a> | <a href="#">Remove this car</a> ]</div>
-<ul>
+<div align="center">[ <a href="/repairs/new?car_id=<%= @car.id %>">Add a new repair for this car</a> | <a href="#">Remove this car</a> ]<br /></div>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col">Date</th>
+			<th scope="col">Description of repair</th>
+			<th scope="col">Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @repairs.each do |repair| %>
+		<tr>
+			<td><%= repair.date %></td>
+			<td><%= repair.description %></td>
+			<td><a href="#">Edit</a> / <a href="#">Remove</a></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<!-- <ul>
 	<% @repairs.each do |repair| %>
 		<li>When: <%= repair.date %></li><br />
 		<li>Description: <%= repair.description %></li><br />
 		<li><a href="/edit_repair/<%=repair.id%>">Edit this repair</a></li><br />
 		-----------------<br />
 	<% end %>
-</ul>
+</ul> -->
