@@ -10,7 +10,6 @@ class ApplicationController < Sinatra::Base
 		set :session_secret, "carsrepairtracker"
 	end
 
-	#index for app
 	get '/' do
 		erb :'users/login'
 	end
