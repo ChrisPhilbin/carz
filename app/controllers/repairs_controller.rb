@@ -12,10 +12,16 @@ class RepairsController < ApplicationController
 		erb :'repairs/new_repair'
 	end
 
-	get "/repairs/:id" do
+	# get "/repairs/:id" do
+	# 	@repair = Repair.find_by(id: params[:id])
+	# 	erb :'repairs/edit_repair'
+	# end
+
+	get '/repairs/:id/edit' do
 		@repair = Repair.find_by(id: params[:id])
-		erb :'repairs/edit_repair'
+		erb :'/repairs/edit_repair'
 	end
+
 
 	post "/repairs/:id" do
 		@repair = Repair.find_by(id: params[:id])
