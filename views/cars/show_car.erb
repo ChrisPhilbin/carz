@@ -14,16 +14,11 @@
 		<tr>
 			<td><%= repair.date %></td>
 			<td><%= repair.description %></td>
-			<td><a href="/repairs/<%= repair.id %>/edit">Edit</a> / <a href="#">Remove</a></td>
+			<td><form action="/repairs/<%= repair.id %>" method="POST">
+	<input type="hidden" name="_method" value="DELETE">
+	<input type="submit" value="Delete">
+</form></td>
 		</tr>
 		<% end %>
 	</tbody>
 </table>
-<!-- <ul>
-	<% @repairs.each do |repair| %>
-		<li>When: <%= repair.date %></li><br />
-		<li>Description: <%= repair.description %></li><br />
-		<li><a href="/edit_repair/<%=repair.id%>">Edit this repair</a></li><br />
-		-----------------<br />
-	<% end %>
-</ul> -->

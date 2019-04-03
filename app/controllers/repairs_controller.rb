@@ -4,7 +4,7 @@ class RepairsController < ApplicationController
    		 redirect_if_not_logged_in
 		 @repair = Repair.new(params[:repair])
 		 @repair.save
-		 redirect "/cars"
+		 redirect to ('/cars')
 	end
 
 	get '/repairs/new' do
@@ -25,7 +25,11 @@ class RepairsController < ApplicationController
 		redirect_if_not_logged_in
 		@repair = Repair.find_by(id: params[:id])
 		@repair.update(params[:repair])
-		redirect "/cars"
+		redirect back
 	end
 
+	delete '/repairs/:id' do
+		@repair = Repair.delete(params[:id])
+		redirect back
+	end
 end
