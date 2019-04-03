@@ -1,3 +1,4 @@
+require 'pry'
 class CarsController < ApplicationController
 
 	get '/cars' do
@@ -33,10 +34,13 @@ class CarsController < ApplicationController
 		erb :new_repair
 	end
 
-	get '/remove_car' do
+	get '/cars/:id/delete' do
 		redirect_if_not_logged_in
-		@cars = Car.all
-		erb :remove_car
+		@car = Car.find_by(id: params[:id])
+		binding.pry
+		# @car.repairs.clear
+		# @car.delete
+		redirect '/cars'
 	end
 
 	post '/cars/:id' do
