@@ -1,4 +1,3 @@
-require 'pry'
 class CarsController < ApplicationController
 
 	get '/cars' do
@@ -37,9 +36,8 @@ class CarsController < ApplicationController
 	get '/cars/:id/delete' do
 		redirect_if_not_logged_in
 		@car = Car.find_by(id: params[:id])
-		binding.pry
-		# @car.repairs.clear
-		# @car.delete
+		@car.repairs.clear
+		@car.delete
 		redirect '/cars'
 	end
 
