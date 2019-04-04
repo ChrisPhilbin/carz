@@ -1,3 +1,9 @@
+<% if @cars.empty? %>
+	<div align="center"><h2>You currently don't have any cars in the app</h2></div>
+
+	<div align="center"><h3>To get started, try <a href="/cars/new">adding a new car</a></h3></div>
+<% end %>
+
 <ul>
 	<% @cars.each do |car| %>
 		<li>

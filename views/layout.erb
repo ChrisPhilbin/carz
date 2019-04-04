@@ -5,11 +5,24 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	</head>
 	<body>
-		<div class="container">
-			<p align="center">
-				[ <a href="/cars">Car list</a> | <a href="/cars/new">Add a new car</a> <% if logged_in? %>| <a href="/logout">Logout</a> <% else %>| <a href="/login">Login</a> <% end %> ]
-				<%= yield %>
-			</p>
-		</div>
+
+
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+ 		<a class="navbar-brand" href="/">///MaintenanceMgr</a>
+  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    	<span class="navbar-toggler-icon"></span>
+  		</button>
+  		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    		<div class="navbar-nav">
+      			<a class="nav-item nav-link" href="/">Home</a>
+      			<a class="nav-item nav-link" href="/cars">View all my cars</a>
+      			<a class="nav-item nav-link" href="/cars/new">Add a new car</a>
+      			<% if logged_in? %><a class="nav-item nav-link" href="/logout">Logout</a> <% else %><a class="nav-item nav-link" href="/login">Login</a> <% end %>
+    		</div>
+  		</div>
+	</nav>
+		&nbsp;<br />
+		<%= yield %>
 	</body>
 </html>
