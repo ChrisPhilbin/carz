@@ -25,7 +25,7 @@ class RepairsController < ApplicationController
 		redirect_if_not_logged_in
 		@repair = Repair.find_by(id: params[:id])
 		@repair.update(params[:repair])
-		redirect back
+		redirect "/cars/#{@repair.car_id}"
 	end
 
 	delete '/repairs/:id' do

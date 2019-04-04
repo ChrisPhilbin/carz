@@ -6,14 +6,14 @@
 		<tr>
 			<th scope="col">Date</th>
 			<th scope="col">Description of repair</th>
-			<th scope="col">Action</th>
+			<th scope="col">Delete?</th>
 		</tr>
 	</thead>
 	<tbody>
 		<% @repairs.each do |repair| %>
 		<tr>
 			<td><%= repair.date %></td>
-			<td><%= repair.description %></td>
+			<td><a href="/repairs/<%= repair.id %>/edit"><%= repair.description %></a></td>
 			<td><form action="/repairs/<%= repair.id %>" method="POST">
 	<input type="hidden" name="_method" value="DELETE">
 	<input type="submit" value="Delete">
