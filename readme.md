@@ -4,14 +4,14 @@ A simple Sinatra app that incorporates postgresql to persist data.  The app is d
 
 ### Installation
 
-`git clone git@github.com:ChrisPhilbin/carz.git
-cd carz
-bundle install
-shotgun`
+`git clone git@github.com:ChrisPhilbin/carz.git`
+`cd carz`
+`bundle install`
+`shotgun`
 
 OR
 
-`Visit: [https://quiet-refuge-82432.herokuapp.com](https://quiet-refuge-82432.herokuapp.com)`
+Visit: [https://quiet-refuge-82432.herokuapp.com](https://quiet-refuge-82432.herokuapp.com)
 
 ### License
 
