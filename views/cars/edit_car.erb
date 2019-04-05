@@ -26,7 +26,8 @@
 	<div class="form-group">
 		<div class="col-4">
 		 	<label for="registration">Registration Expiration month:</label>
-			<select name="car[registration]" class="form-control" id="registration">
+			<select name="car[registration]" class="form-control" id="registration" value="<%= @car.registration %>">
+				<option selected><%= @car.registration %></option>
 				<option>January</option>
 				<option>February</option>
 				<option>March</option>
@@ -47,6 +48,7 @@
 		<div class="col-4">
 		 	<label for="inspection">Inspection Expiration month:</label>
 			<select name="car[inspection]" class="form-control" id="inspection">
+				<option selected><%= @car.inspection %></option>
 				<option>January</option>
 				<option>February</option>
 				<option>March</option>

@@ -4,10 +4,27 @@
 	<div align="center"><h3>To get started, try <a href="/cars/new">adding a new car</a></h3></div>
 <% end %>
 
-<ul>
-	<% @cars.each do |car| %>
-		<li>
-			<a href="cars/<%= car.id %>"><%= car.year %> <%= car.make %> <%= car.model%></a><br />
-		</li>
-	<% end %>
-</ul>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col">Year</th>
+			<th scope="col">Make & Model</th>
+			<th scope="col"># of Repairs</th>
+			<th scope="col">Inpsection</th>
+			<th scope="col">Registration</th>
+			<th scope="col">Vin #</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @cars.each do |car| %>
+		<tr>
+			<td><a href="cars/<%= car.id %>"><%= car.year %></a></td>
+			<td><a href="cars/<%= car.id %>"><%= car.make %> <%= car.model %></a></td>
+			<td><%= car.repairs.count %></td>
+			<td><%= car.inspection %></td>
+			<td><%= car.registration %></td>
+			<td><%= car.vin %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
