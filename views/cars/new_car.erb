@@ -23,6 +23,26 @@
 		</div>
 	</div>
 
+	<div class="form-group">
+		<div class="col-4">
+		 	<label for="registration">Registration Expiration month:</label>
+			<select name="car[registration]" class="form-control" id="registration">
+				<option>January</option>
+				<option>February</option>
+				<option>March</option>
+				<option>April</option>
+				<option>May</option>
+				<option>June</option>
+				<option>July</option>
+				<option>August</option>
+				<option>September</option>
+				<option>October</option>
+				<option>November</option>
+				<option>December</option>
+			</select>
+		</div>
+	</div>
+
 	<input type="hidden" name="car[user_id]" value="<%= current_user.id %>">
 	<button type="submit" class="btn btn-primary">Submit</button>
 
