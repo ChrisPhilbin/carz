@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2019_04_05_004822) do
 
-  create_table "cars", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "cars", id: :serial, force: :cascade do |t|
     t.integer "year"
     t.string "make"
     t.string "model"
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_04_05_004822) do
     t.string "licenseplate"
   end
 
-  create_table "repairs", force: :cascade do |t|
+  create_table "repairs", id: :serial, force: :cascade do |t|
     t.string "description"
     t.integer "car_id"
     t.string "date"
