@@ -1,0 +1,76 @@
+<div align="center"><h1><strong>Update your car's details</strong></h1></div>
+
+<form action="/cars/<%= @car.id %>" method="post" role="form">
+
+	<div class="form-group">
+		<div class="col-4">
+			<label for="year">Year:</label>
+			<input name="car[year]" class="form-control" id="year" type="text" value="<%= @car.year %>">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-4">
+			<label for="make">Make:</label>
+		 	<input name="car[make]" class="form-control" id="make" type="text" value="<%= @car.make %>">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-4">
+		 	<label for="model">Model:</label>
+			<input name="car[model]" class="form-control" id="model" type="text" value="<%= @car.model %>">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-4">
+		 	<label for="registration">Registration Expiration month:</label>
+			<select name="car[registration]" class="form-control" id="registration">
+				<option>January</option>
+				<option>February</option>
+				<option>March</option>
+				<option>April</option>
+				<option>May</option>
+				<option>June</option>
+				<option>July</option>
+				<option>August</option>
+				<option>September</option>
+				<option>October</option>
+				<option>November</option>
+				<option>December</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-4">
+		 	<label for="inspection">Inspection Expiration month:</label>
+			<select name="car[inspection]" class="form-control" id="inspection">
+				<option>January</option>
+				<option>February</option>
+				<option>March</option>
+				<option>April</option>
+				<option>May</option>
+				<option>June</option>
+				<option>July</option>
+				<option>August</option>
+				<option>September</option>
+				<option>October</option>
+				<option>November</option>
+				<option>December</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-4">
+		 	<label for="vin">Vin:</label>
+			<input name="car[vin]" class="form-control" id="vin" type="text" value="<%= @car.vin %>">
+		</div>
+	</div>
+
+	<input type="hidden" name="car[user_id]" value="<%= current_user.id %>">
+	<button type="submit" class="btn btn-primary">Submit</button>
+
+</form>

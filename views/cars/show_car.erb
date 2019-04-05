@@ -2,7 +2,7 @@
 <div align="center"><strong>Registration due:</strong> <%= @car.registration %></div>
 <div align="center"><strong>Inspection due:</strong> <%= @car.inspection %></div>
 <div align="center"><strong>Vin:</strong> <%= @car.vin %></div>
-<div align="center">[ <a href="/repairs/new?car_id=<%= @car.id %>">Add a new repair for this car</a> | <a href="/cars/<%= @car.id %>/delete">Remove this car and all associated repairs</a> ]<br /></div>
+<div align="center">[ <a href="/repairs/new?car_id=<%= @car.id %>">Add a new repair for this car</a> | <a href="/cars/<%= @car.id %>/edit">Edit this car's details</a> | <a href="/cars/<%= @car.id %>/delete">Remove this car and all associated repairs</a> ]<br /></div>
 
 <table class="table table-striped">
 	<thead>

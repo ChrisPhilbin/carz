@@ -26,6 +26,18 @@ class CarsController < ApplicationController
 		erb :'cars/show_car'
 	end
 
+	post '/cars/:id' do
+		redirect_if_not_logged_in
+		@car = Car.find_by(id: params[:id])
+		@car.update(params[:car])
+		redirect "/cars/#{@car.id}"
+	end
+
+	get '/cars/:id/edit' do
+		@car = Car.find_by(id: params[:id])
+		erb :'cars/edit_car'
+	end
+
 	get '/cars/:id/add_repair' do
 		redirect_if_not_logged_in
 		@car = Car.find_by(id: params[:id])
