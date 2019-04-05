@@ -18,4 +18,4 @@ Visit: [https://quiet-refuge-82432.herokuapp.com](https://quiet-refuge-82432.her
 
 ### License
 
-This project is licensed under the MIT License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see [LICENSE](https://github.com/ChrisPhilbin/carz/blob/master/LICENSE) file for details
