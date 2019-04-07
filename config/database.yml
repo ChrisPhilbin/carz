@@ -4,3 +4,9 @@ username: dbuser
 password: passw0rd
 host: localhost
 post: 5432
+
+development:
+  adapter: postgresql
+  host: localhost
+  username: user
+  database: app-dev
