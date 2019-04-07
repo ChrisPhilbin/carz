@@ -1,6 +1,6 @@
-# adapter: 'postgresql'
-# database: 'db/maintenancemgrdb'
-# username: dbuser
-# password: passw0rd
-# host: localhost
-# post: 5432
+  adapter: 'postgresql'
+  database: 'db/maintenancemgrdb'
+  username: dbuser
+  password: passw0rd
+  host: localhost
+  post: 5432
