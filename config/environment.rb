@@ -1,5 +1,3 @@
-ENV['SINATRA_ENV'] ||= "production"
-
 require 'bundler/setup'
 require 'rake'
 require 'sinatra/activerecord'
