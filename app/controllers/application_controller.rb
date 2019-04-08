@@ -8,6 +8,7 @@ class ApplicationController < Sinatra::Base
 		set :views, './views'
 		enable :sessions
 		set :session_secret, "carsrepairtracker"
+		set :environment, :production
 	end
 
 	get '/' do
