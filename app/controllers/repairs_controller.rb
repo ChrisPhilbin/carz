@@ -21,7 +21,7 @@ class RepairsController < ApplicationController
 	end
 
 
-	post "/repairs/:id" do
+	patch "/repairs/:id" do
 		redirect_if_not_logged_in
 		@repair = Repair.find_by(id: params[:id])
 		@repair.update(params[:repair])

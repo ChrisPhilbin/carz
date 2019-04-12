@@ -1,6 +1,7 @@
 <div align="center"><h1><strong>Edit this repair for your <%= @repair.car.year %> <%= @repair.car.make %> <%= @repair.car.model %></strong></h1></div>
 
 <form action="/repairs/<%= @repair.id %>" method="post" role="form">
+	<input type="hidden" name="_method" value="PATCH">
 
 	<div class="form-group">
 		<div class="col-4">
