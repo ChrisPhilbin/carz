@@ -1,6 +1,7 @@
 <div align="center"><h1><strong>Update your car's details</strong></h1></div>
 
 <form action="/cars/<%= @car.id %>" method="post" role="form">
+	<input type="hidden" name="_method" value="PATCH">
 
 	<div class="form-group">
 		<div class="col-4">

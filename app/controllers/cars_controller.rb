@@ -26,7 +26,7 @@ class CarsController < ApplicationController
 		erb :'cars/show_car'
 	end
 
-	post '/cars/:id' do
+	patch '/cars/:id' do
 		redirect_if_not_logged_in
 		@car = Car.find_by(id: params[:id])
 		@car.update(params[:car])
